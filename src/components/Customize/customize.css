@@ -1,0 +1,30 @@
+.main-container{
+    display: flex;
+}
+
+.splitscreen{
+    border: 2px solid black;
+    flex: 1;
+}
+
+.pizza-container{
+    max-height: 500px;
+    max-width: 500px;
+    position: relative;
+    justify-content: center;
+    text-align: center;
+    
+}
+.ingredient{
+    
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.pizza-base{
+    
+    height: 100%;
+    width: 100%;
+    
+}

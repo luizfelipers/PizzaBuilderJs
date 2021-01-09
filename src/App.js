@@ -1,12 +1,30 @@
 import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+import Customize from './components/Customize';
 
 function App() {
   return (
     <div className="App">
-      <h1>Monte a sua Pizza!</h1>
-      <h3>A combinação dos nossos ingredientes e a sua fome!</h3>
-      <p>Use a sua criatividade!</p>
+      <Header></Header>
+      <Router>
+        <Switch>
+          <Route exact path='/'>
+            <Customize></Customize>
+      </Route>
+          <Route exact path='/checkout'>
+            CheckOut
+      </Route>
+
+        </Switch>
+
+      </Router>
+
+
+
+
+      
     </div>
   );
 }
