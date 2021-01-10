@@ -4,6 +4,7 @@ Pizza Builder feature to be future implemented in @PizzaDaQuebrada.
 
 Things to Update :construction_worker: :
 - Redesign 'Ingredients' section (right half of the screen).
+- Add more ingredients w/ illustrations.
 - Structure mobile/responsive design.
 - Implement Checkout Page.
 
