@@ -10,16 +10,25 @@ import Base from '../../images/ingredients/PizzaBase.png';
 import PMan from '../../images/ingredients/PizzaMan.png';
 import Tomato from '../../images/ingredients/Tomato.png';
 
-const Customize = () => {
+const Customize = ({ ingredients, setIngredients }) => {
+
+    const onChange = (event, name) => {
+        let newIngredients = JSON.parse(JSON.stringify(ingredients));
+        //toggle ingredient
+
+        newIngredients[name] = event;
+        setIngredients(newIngredients);
+        localStorage.setItem('ingredients', JSON.stringify(newIngredients));
+
+    }
+
     return (
         <div className='main-container'>
-            
-                <div  className='splitscreen'>
-                    
-                Image
+       {/* {JSON.stringify(ingredients)};  */}
+            <div className='splitscreen'>
 
                 <div className='pizza-container'>
-                    <img className='pizza-base' src={Base} alt='base'></img>
+
                     <img className='ingredient' src={Cheese} alt='cheese'></img>
                     <img className='ingredient' src={Mushroom} alt='mushroom'></img>
                     <img className='ingredient' src={Tomato} alt='tomato'></img>
@@ -27,12 +36,44 @@ const Customize = () => {
                     <img className='ingredient' src={Pineapple} alt='pineapple'></img>
 
 
-                    </div>    
-                    </div>
-            <div  className='splitscreen'>Checkout</div>
-          
-            
+                    <img className='pizza-base' src={Base} alt='base'></img>
+                </div>
+            </div>
+            <div className='splitscreen'>
+                {/*Cheese */}
 
+                <input className='formzinho' type="checkbox" id="queijo" name="queijo" value="queijo" onChange={(event) => onChange(event.currentTarget.checked, 'cheese')} />
+                <label for="cheese"> Queijo</label><br></br>
+
+
+                {/* Mushroom */}
+
+                <input className='formzinho' type="checkbox" id="cogumelo" name="cogumelo" value="cogumelo" onChange={(event) => onChange(event.currentTarget.checked, 'mushroom')} />
+                <label for="mushroom"> Cogumelo</label><br></br>
+                
+                {/*Pineapple */}
+
+                <input className='formzinho' type="checkbox" id="pineapple" name="pineapple" value="pineapple" onChange={(event) => onChange(event.currentTarget.checked, 'pineapple')} />
+                <label for="pineapple"> Abacaxi</label><br></br>
+
+                 {/*Basil */}
+
+                 <input className='formzinho' type="checkbox" id="manjericao" name="manjericao" value="manjericao" onChange={(event) => onChange(event.currentTarget.checked, 'basil')} />
+                <label for="basil"> Manjericão</label><br></br>
+
+
+                {/* Olive */}
+
+                <input className='formzinho' type="checkbox" id="azeitona" name="azeitona" value="azeitona" onChange={(event) => onChange(event.currentTarget.checked, 'olive')} />
+                <label for="olive"> Azeitona</label><br></br>
+                
+                {/*Pineapple */}
+
+                <input className='formzinho' type="checkbox" id="tomate" name="tomate" value="tomate" onChange={(event) => onChange(event.currentTarget.checked, 'tomato')} />
+                <label for="tomato"> Tomate</label><br></br>
+
+
+            </div>
         </div>
     )
 }

@@ -3,28 +3,37 @@
 }
 
 .splitscreen{
-    border: 2px solid black;
+ border: 2px solid black;
     flex: 1;
+    padding: 10px;
 }
 
 .pizza-container{
-    max-height: 500px;
-    max-width: 500px;
+    max-height: 350px;
+    max-width: 350px;
     position: relative;
     justify-content: center;
+    align-items: center;
     text-align: center;
+    display: flex;
+    right: -2%;
+  
+    
+}.pizza-base{
+    
+    height: 100%;
+    width: 100%;
+   
     
 }
 .ingredient{
     
     height: 100%;
     width: 100%;
+    
     position: absolute;
 }
 
-.pizza-base{
-    
-    height: 100%;
-    width: 100%;
-    
+.formzinho{
+    cursor: pointer;
 }

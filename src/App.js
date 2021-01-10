@@ -3,15 +3,33 @@ import './App.css';
 import Header from './components/Header';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import Customize from './components/Customize';
+import React, {useState} from 'react'
 
 function App() {
+
+const [ingredients, setIngredients] = useState({
+  basil:false,
+  cheese:false,
+  mushroom:false,
+  olive:false,
+  pineapple:false,
+  tomato:false,
+
+})
+
+
+
+
   return (
     <div className="App">
       <Header></Header>
       <Router>
         <Switch>
           <Route exact path='/'>
-            <Customize></Customize>
+            <Customize
+            ingredients={ingredients}
+            setIngredients ={setIngredients}
+            ></Customize>
       </Route>
           <Route exact path='/checkout'>
             CheckOut
