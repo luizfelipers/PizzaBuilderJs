@@ -74,6 +74,8 @@ const Customize = ({ ingredients, setIngredients }) => {
 
 
             </div>
+
+            {JSON.stringify(ingredients)};
         </div>
     )
 }
