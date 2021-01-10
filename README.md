@@ -9,7 +9,8 @@ Things to Update :construction_worker: :
 - Implement Checkout Page.
 
 ## Desktop Demo
-![](https://user-images.githubusercontent.com/26651389/104127553-75d7f900-5341-11eb-8804-14e88f09b769.gif)
+![](https://user-images.githubusercontent.com/26651389/104138497-2f0af300-5383-11eb-86fc-f8e3fbd6236b.gif)
+
 
 ## Getting Started with Create React App
 
