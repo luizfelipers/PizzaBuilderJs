@@ -9,6 +9,7 @@ import PizzaLogo from '../../images/ingredients/pizza logo.png';
 import Base from '../../images/ingredients/PizzaBase.png';
 import PMan from '../../images/ingredients/PizzaMan.png';
 import Tomato from '../../images/ingredients/Tomato.png';
+import { motion } from 'framer-motion';
 
 const Customize = ({ ingredients, setIngredients }) => {
 
@@ -24,58 +25,145 @@ const Customize = ({ ingredients, setIngredients }) => {
 
     return (
         <div className='main-container'>
-       {/* {JSON.stringify(ingredients)};  */}
-            <div className='splitscreen'>
+            {/* {JSON.stringify(ingredients)};  */}
+            <div className='splitscreen bgdark'>
 
                 <div className='pizza-container'>
 
-                    <img className='ingredient' src={Cheese} alt='cheese'></img>
-                    <img className='ingredient' src={Mushroom} alt='mushroom'></img>
-                    <img className='ingredient' src={Tomato} alt='tomato'></img>
-                    <img className='ingredient' src={Basil} alt='basil'></img>
-                    <img className='ingredient' src={Pineapple} alt='pineapple'></img>
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{
+                            y: ingredients['cheese'] ? 0 : -100,
+                            opacity: ingredients['cheese'] ? 1 : 0,
+                        }}
+                        transition={{ duration: 0.5 }}
+                        className='ingredient'
 
+
+                    >
+                        <img src={Cheese} alt='cheese' height='100%' width='100%'></img>
+                    </motion.div>
+
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{
+                            y: ingredients['olive'] ? 0 : -100,
+                            opacity: ingredients['olive'] ? 1 : 0,
+                        }}
+                        transition={{ duration: 0.5 }}
+                        className='ingredient'
+
+
+                    >
+                        <img src={Olive} alt='azeitona' height='100%' width='100%'></img>
+                    </motion.div>
+
+
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{
+                            y: ingredients['mushroom'] ? 0 : -100,
+                            opacity: ingredients['mushroom'] ? 1 : 0,
+                        }}
+                        transition={{ duration: 0.5 }}
+                        className='ingredient'>
+                        <img src={Mushroom} alt='mushroom' height='100%' width='100%'></img>
+                    </motion.div>
+
+                    <motion.div
+
+                        initial={{ opacity: 0 }}
+                        animate={{
+                            y: ingredients['tomato'] ? 0 : -100,
+                            opacity: ingredients['tomato'] ? 1 : 0,
+                        }}
+                        transition={{ duration: 0.5 }}
+                        className='ingredient'>
+                        <img src={Tomato} alt='tomato' height='100%' width='100%'></img>
+                    </motion.div>
+
+
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{
+                            y: ingredients['basil'] ? 0 : -100,
+                            opacity: ingredients['basil'] ? 1 : 0,
+                        }}
+                        transition={{ duration: 0.5 }}
+                        className='ingredient'
+                    >
+                        <img src={Basil} alt='basil' height='100%' width='100%'></img>
+                    </motion.div>
+
+
+
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{
+                            y: ingredients['pineapple'] ? 0 : -100,
+                            opacity: ingredients['pineapple'] ? 1 : 0,
+                        }}
+                        transition={{ duration: 0.5 }}
+                        className='ingredient'
+                    >
+                        <img src={Pineapple} alt='pineapple' height='100%' width='100%'></img>
+                    </motion.div>
 
                     <img className='pizza-base' src={Base} alt='base'></img>
                 </div>
             </div>
-            <div className='splitscreen'>
-                {/*Cheese */}
-
-                <input className='formzinho' type="checkbox" id="queijo" name="queijo" value="queijo" onChange={(event) => onChange(event.currentTarget.checked, 'cheese')} />
-                <label for="cheese"> Queijo</label><br></br>
+            <div className='splitscreen recipebg'>
 
 
-                {/* Mushroom */}
+                <div className='opcoes'>
+                    <div
+                    className='cardapio-titulo'                
+                >Recheie a sua pizza!</div>
+                    {/*Cheese */}
 
-                <input className='formzinho' type="checkbox" id="cogumelo" name="cogumelo" value="cogumelo" onChange={(event) => onChange(event.currentTarget.checked, 'mushroom')} />
-                <label for="mushroom"> Cogumelo</label><br></br>
+                    <input className='formzinho' type="checkbox" id="queijo" name="queijo" value="queijo" onChange={(event) => onChange(event.currentTarget.checked, 'cheese')} />
+                    <label for="cheese" classname='opcoes'> Queijo</label><br></br>
+
+
+
+
+                    {/* Mushroom */}
+
+                    <input className='formzinho' type="checkbox" id="cogumelo" name="cogumelo" value="cogumelo" onChange={(event) => onChange(event.currentTarget.checked, 'mushroom')} />
+                    <label for="mushroom" classname='opcoes'> Cogumelo</label><br></br>
+
+                    {/*Pineapple */}
+
+                    <input className='formzinho' type="checkbox" id="pineapple" name="pineapple" value="pineapple" onChange={(event) => onChange(event.currentTarget.checked, 'pineapple')} />
+                    <label for="pineapple" classname='opcoes'> Abacaxi</label><br></br>
+
+                    {/*Basil */}
+
+                    <input className='formzinho' type="checkbox" id="manjericao" name="manjericao" value="manjericao" onChange={(event) => onChange(event.currentTarget.checked, 'basil')} />
+                    <label for="basil" classname='opcoes'> Manjericão</label><br></br>
+
+
+                    {/* Olive */}
+
+                    <input className='formzinho' type="checkbox" id="azeitona" name="azeitona" value="azeitona" onChange={(event) => onChange(event.currentTarget.checked, 'olive')} />
+                    <label for="olive" classname='opcoes'> Azeitona</label><br></br>
+
+                    {/*Pineapple */}
+
+                    <input className='formzinho' type="checkbox" id="tomate" name="tomate" value="tomate" onChange={(event) => onChange(event.currentTarget.checked, 'tomato')} />
+                    <label for="tomato" classname='opcoes'> Tomate</label><br></br>
                 
-                {/*Pineapple */}
-
-                <input className='formzinho' type="checkbox" id="pineapple" name="pineapple" value="pineapple" onChange={(event) => onChange(event.currentTarget.checked, 'pineapple')} />
-                <label for="pineapple"> Abacaxi</label><br></br>
-
-                 {/*Basil */}
-
-                 <input className='formzinho' type="checkbox" id="manjericao" name="manjericao" value="manjericao" onChange={(event) => onChange(event.currentTarget.checked, 'basil')} />
-                <label for="basil"> Manjericão</label><br></br>
+                </div>
+<button type='submit' className='cardapio-button'>Confirmar!</button>
 
 
-                {/* Olive */}
-
-                <input className='formzinho' type="checkbox" id="azeitona" name="azeitona" value="azeitona" onChange={(event) => onChange(event.currentTarget.checked, 'olive')} />
-                <label for="olive"> Azeitona</label><br></br>
-                
-                {/*Pineapple */}
-
-                <input className='formzinho' type="checkbox" id="tomate" name="tomate" value="tomate" onChange={(event) => onChange(event.currentTarget.checked, 'tomato')} />
-                <label for="tomato"> Tomate</label><br></br>
 
 
             </div>
 
-            {JSON.stringify(ingredients)};
+
+
+
         </div>
     )
 }

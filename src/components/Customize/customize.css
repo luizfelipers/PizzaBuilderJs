@@ -9,14 +9,15 @@
 }
 
 .pizza-container{
-    max-height: 350px;
-    max-width: 350px;
+    max-height: 380px;
+    max-width: 380px;
     position: relative;
     justify-content: center;
     align-items: center;
     text-align: center;
     display: flex;
     right: -2%;
+    
   
     
 }.pizza-base{
@@ -36,4 +37,42 @@
 
 .formzinho{
     cursor: pointer;
+    box-shadow: 1px 1px black;
+    
+
+}
+
+.bgdark{
+    background-color: rgb(35, 35, 35);
+}
+
+.recipebg{
+    background-image: url(../../images/ingredients/pizzasbg.jpg) ;
+   background-size: contain;
+
+
+  
+  
+}
+
+.opcoes{
+    text-align:start;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: blanchedalmond;
+    border-radius: 10px;
+    box-shadow: 2px 2px black;
+    padding: 10px;
+}
+
+.cardapio-titulo{
+    text-align: center;
+    padding: 20px;
+}
+
+.cardapio-button{
+    text-align: center;
+    align-items: center;
+    justify-self: center;
 }
