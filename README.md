@@ -8,6 +8,7 @@ Things to Update :construction_worker: :
 - Structure mobile/responsive design.
 - Implement Checkout Page.
 
+## Desktop Demo
 ![](https://user-images.githubusercontent.com/26651389/104127553-75d7f900-5341-11eb-8804-14e88f09b769.gif)
 
 ## Getting Started with Create React App
