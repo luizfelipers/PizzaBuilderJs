@@ -49,6 +49,7 @@
 .recipebg{
     background-image: url(../../images/ingredients/pizzasbg.jpg) ;
    background-size: contain;
+   
 
 
   
@@ -59,16 +60,18 @@
     text-align:start;
     font-style: italic;
     font-weight: bold;
-    font-size: 20px;
-    background-color: blanchedalmond;
+    font-size: 18px;
+    background-color: rgba(255, 242, 221, 0.479);
     border-radius: 10px;
     box-shadow: 2px 2px black;
-    padding: 10px;
+    padding: 20px;
 }
 
 .cardapio-titulo{
     text-align: center;
     padding: 20px;
+    padding-top: 0px;
+    font-size: larger;
 }
 
 .cardapio-button{
