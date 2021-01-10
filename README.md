@@ -1,6 +1,6 @@
 # Pizza Builder Menu JS
 
-Pizza Builder feature to be future implemented in @PizzaDaQuebrada. 
+Pizza Builder feature to be future implemented in @PizzaDaQuebrada. Built with ReactJs, using React Hooks to manage ingredient's states.
 
 Things to Update :construction_worker: :
 - Redesign 'Ingredients' section (right half of the screen).
