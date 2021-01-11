@@ -10,8 +10,11 @@ import Base from '../../images/ingredients/PizzaBase.png';
 import PMan from '../../images/ingredients/PizzaMan.png';
 import Tomato from '../../images/ingredients/Tomato.png';
 import { motion } from 'framer-motion';
+import {useHistory} from 'react-router-dom';
 
 const Customize = ({ ingredients, setIngredients }) => {
+
+    let history = useHistory();
 
     const onChange = (event, name) => {
         let newIngredients = JSON.parse(JSON.stringify(ingredients));
@@ -31,13 +34,15 @@ const Customize = ({ ingredients, setIngredients }) => {
                 <div className='pizza-container'>
 
                     <motion.div
-                        initial={{ opacity: 0 }}
+                        initial={{ scale: 0 }}
                         animate={{
-                            y: ingredients['cheese'] ? 0 : -100,
-                            opacity: ingredients['cheese'] ? 1 : 0,
+                           // y: ingredients['cheese'] ? 0 : -100,
+                           // opacity: ingredients['cheese'] ? 1 : 0,
+
+                           scale: ingredients['cheese'] ? 1 : 0,
                         }}
                         transition={{ duration: 0.5 }}
-                        className='ingredient'
+                        className='ingredient z1'
 
 
                     >
@@ -51,7 +56,7 @@ const Customize = ({ ingredients, setIngredients }) => {
                             opacity: ingredients['olive'] ? 1 : 0,
                         }}
                         transition={{ duration: 0.5 }}
-                        className='ingredient'
+                        className='ingredient z2'
 
 
                     >
@@ -66,7 +71,7 @@ const Customize = ({ ingredients, setIngredients }) => {
                             opacity: ingredients['mushroom'] ? 1 : 0,
                         }}
                         transition={{ duration: 0.5 }}
-                        className='ingredient'>
+                        className='ingredient z3'>
                         <img src={Mushroom} alt='mushroom' height='100%' width='100%'></img>
                     </motion.div>
 
@@ -78,7 +83,7 @@ const Customize = ({ ingredients, setIngredients }) => {
                             opacity: ingredients['tomato'] ? 1 : 0,
                         }}
                         transition={{ duration: 0.5 }}
-                        className='ingredient'>
+                        className='ingredient z3'>
                         <img src={Tomato} alt='tomato' height='100%' width='100%'></img>
                     </motion.div>
 
@@ -90,7 +95,7 @@ const Customize = ({ ingredients, setIngredients }) => {
                             opacity: ingredients['basil'] ? 1 : 0,
                         }}
                         transition={{ duration: 0.5 }}
-                        className='ingredient'
+                        className='ingredient z4'
                     >
                         <img src={Basil} alt='basil' height='100%' width='100%'></img>
                     </motion.div>
@@ -104,7 +109,7 @@ const Customize = ({ ingredients, setIngredients }) => {
                             opacity: ingredients['pineapple'] ? 1 : 0,
                         }}
                         transition={{ duration: 0.5 }}
-                        className='ingredient'
+                        className='ingredient z4'
                     >
                         <img src={Pineapple} alt='pineapple' height='100%' width='100%'></img>
                     </motion.div>
@@ -154,7 +159,9 @@ const Customize = ({ ingredients, setIngredients }) => {
                     <label for="tomato" classname='opcoes'> Tomate</label><br></br>
                 
                 </div>
-<button type='submit' className='cardapio-button'>Confirmar!</button>
+<button  className='cardapio-button'
+onClick={()=>history.push('/checkout')}
+>Confirmar!</button>
 
 
 

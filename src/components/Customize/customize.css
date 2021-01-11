@@ -1,11 +1,20 @@
 .main-container{
     display: flex;
+    
 }
 
 .splitscreen{
  border: 2px solid black;
     flex: 1;
     padding: 10px;
+    float: left;
+    width: 50%;
+}
+
+@media screen and (max-width:500px){
+    .splitscreen{
+        width: 100%;
+    }
 }
 
 .pizza-container{
@@ -78,4 +87,23 @@
     text-align: center;
     align-items: center;
     justify-self: center;
+}
+
+.z1{
+    z-index: 1;
+}
+
+
+.z2{
+    z-index: 2;
+}
+
+
+.z3{
+    z-index: 3;
+}
+
+
+.z4{
+    z-index: 4;
 }
