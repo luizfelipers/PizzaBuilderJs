@@ -17,13 +17,16 @@ const Customize = ({ ingredients, setIngredients }) => {
     let history = useHistory();
 
     const onChange = (event, name) => {
+        
+        localStorage.clear();
+        
         let newIngredients = JSON.parse(JSON.stringify(ingredients));
         //toggle ingredient
 
         newIngredients[name] = event;
         setIngredients(newIngredients);
         localStorage.setItem('ingredients', JSON.stringify(newIngredients));
-
+        console.log(localStorage);
     }
 
     return (

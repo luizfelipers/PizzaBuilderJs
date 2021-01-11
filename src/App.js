@@ -3,7 +3,7 @@ import './App.css';
 import Header from './components/Header';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import Customize from './components/Customize';
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import Checkout from './components/Checkout';
 
 function App() {
@@ -16,7 +16,19 @@ const [ingredients, setIngredients] = useState({
   pineapple:false,
   tomato:false,
 
-})
+});
+
+useEffect(() => {
+ 
+ 
+  const data = localStorage.getItem('ingredients');
+ 
+  if(data){
+    setIngredients(JSON.parse(data));
+  }
+
+ 
+}, [])
 
 
 
